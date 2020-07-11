@@ -1,4 +1,4 @@
-const API_KEY = "https://api.themoviedb.org/3/movie/550?api_key=0ff26105cc6d51d1e3a049d05b98a5dd"
+const API_KEY = "0ff26105cc6d51d1e3a049d05b98a5dd"
 
 const requests = {
     fetchTrending : `/trending/all/week?api_key=${API_KEY}&language=en-US`,
