@@ -28,6 +28,6 @@
 }
 
 .row_posterLarge {
-    max-height: 300px;
+    max-height: 275px;
     transform : scale (2);
 }
