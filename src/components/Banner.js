@@ -1,19 +1,16 @@
 import React, { useEffect, useState } from 'react'
-import axios from './axios'
-import requests from "./requests";
+import axios from '../utils/axios'
+import requests from "../utils/requests";
 import '../style/Banner.css'
+import {useDispatch, useSelector} from  "react-redux";
+import { getBanner } from '../actions';
 
 function Banner() {
-    const [movie, setMovie] = useState([])
+    const dispatch = useDispatch();
+    const movie = useSelector(state => state.banner.bannerData)
 
     useEffect(() => {
-        async function fetchData ()
-        {
-            const request = await axios.get(requests.fetchNetflixOriginals);
-            setMovie(request.data.results[Math.floor(Math.random() * request.data.results.length-1)])
-            return request;
-        }
-        fetchData();
+        dispatch(getBanner());
     }, [])
     console.log(movie);
     
